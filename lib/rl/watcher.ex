@@ -14,7 +14,7 @@ defmodule Rl.Watcher do
   ]
 
   def init([]) do
-    {:ok, watcher_pid} = FileSystem.start_link(dirs: [System.cwd!()])
+    {:ok, watcher_pid} = FileSystem.start_link(dirs: [File.cwd!()])
     FileSystem.subscribe(watcher_pid)
     state = load_config()
 

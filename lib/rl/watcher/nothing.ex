@@ -4,7 +4,7 @@ defmodule Rl.Watcher.Nothing do
     events
   end
 
-  def handle_events(events, state) do
+  def handle_events(_events, state) do
     {:ok, state}
   end
 end

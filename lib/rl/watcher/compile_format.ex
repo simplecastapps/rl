@@ -10,8 +10,11 @@ defmodule Rl.Watcher.CompileFormat do
       IO.puts("done compiling")
     catch
       _, _ -> :error
-    end |> case do
-      :error -> :error
+    end
+    |> case do
+      :error ->
+        :error
+
       _ ->
         Rl.Watcher.Shell.run("mix format")
     end
